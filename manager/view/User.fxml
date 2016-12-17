@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="192.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.view.UserController">
+   <top>
+      <TextFlow prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="User">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="subTitle" text="Add a new user" textFill="#838383">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </TextFlow>
+   </top>
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="memberNameLabel" text="Name">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="memberNameInput" prefHeight="25.0" prefWidth="337.0" />
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </center>
+   <bottom>
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="48.0" prefWidth="600.0" BorderPane.alignment="BOTTOM_RIGHT">
+         <children>
+            <Button fx:id="userSave" minWidth="75.0" mnemonicParsing="false" onAction="#saveUser" text="Save">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="memberCancel" minWidth="75.0" mnemonicParsing="false" onAction="#closeButton" text="Cancel" />
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>

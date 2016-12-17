@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1032.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.ChoreManagerController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="195.0" minHeight="0.0" prefHeight="25.0" valignment="TOP" vgrow="NEVER" />
+    <RowConstraints maxHeight="711.0" minHeight="10.0" prefHeight="686.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu fx:id="mainMenu" text="File">
+            <items>
+                  <MenuItem fx:id="menuItemNewUser" onAction="#createUserHandle" text="New User" />
+                  <MenuItem fx:id="menuItemNewChore" onAction="#createChoreHandle" text="New Chore" />
+              <MenuItem onAction="#closeButton" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane fx:id="managerTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="1">
+        <tabs>
+          <Tab fx:id="choreListTab" text="Chore List">
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="581.0" minHeight="10.0" prefHeight="519.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="323.0" minHeight="10.0" prefHeight="138.0" vgrow="NEVER" />
+                    </rowConstraints>
+                     <children>
+                        <TextArea fx:id="usersChoreDescription" prefHeight="200.0" prefWidth="200.0" text="Description here ..." GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </GridPane.margin></TextArea>
+                        <TableView fx:id="listViewUsersChore" prefHeight="200.0" prefWidth="200.0">
+                           <columns>
+                              <TableColumn fx:id="usersChoreName" prefWidth="290.0" text="Chore Name" />
+                              <TableColumn fx:id="usersChoreCompleted" prefWidth="304.0" text="Completed" />
+                              <TableColumn fx:id="usersChoreDueDate" prefWidth="198.0" text="DueDate" />
+                              <TableColumn fx:id="usersChoreAssingee" prefWidth="208.0" text="Assingee" />
+                           </columns>
+                           <GridPane.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </GridPane.margin>
+                        </TableView>
+                     </children>
+                  </GridPane>
+               </content>
+          </Tab>
+          <Tab fx:id="usersTab" text="Users">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <items>
+                            <Button fx:id="editUser" mnemonicParsing="false" onAction="#edit" text="Edit" />
+                              <Button fx:id="deleteUser" mnemonicParsing="false" onAction="#delete" text="Delete" />
+                          </items>
+                        </ToolBar>
+                     </top>
+                     <center>
+                        <TableView fx:id="listViewUsers" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="userName" prefWidth="279.0" text="User Name" />
+                          </columns>
+                           <BorderPane.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </BorderPane.margin>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </content>
+          </Tab>
+            <Tab fx:id="choresTab" text="Chores">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <items>
+                              <Button fx:id="editChore" mnemonicParsing="false" onAction="#edit" text="Edit" />
+                              <Button fx:id="deleteChore" mnemonicParsing="false" onAction="#delete" text="Delete" />
+                          </items>
+                        </ToolBar>
+                     </top>
+                     <center>
+                        <TableView fx:id="listViewChores" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="choreName" prefWidth="220.0" text="Chore Name" />
+                            <TableColumn fx:id="choreDescription" prefWidth="549.0" text="Description" />
+                              <TableColumn fx:id="choreCompleted" prefWidth="76.0" text="Completed" />
+                              <TableColumn fx:id="choreDueDate" prefWidth="155.0" text="DueDate" />
+                          </columns>
+                           <BorderPane.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </BorderPane.margin>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</GridPane>
